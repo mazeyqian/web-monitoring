@@ -2,8 +2,8 @@
 
 # IDEs and editors
 .vscode/
-package-lock.json
+# package-lock.json
 node_modules
 /browser_probe
 .history
-/backend_server/access.log
+access.log

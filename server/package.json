@@ -3,7 +3,9 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "supervisor ./bin/www"
+        "dev": "supervisor ./bin/backsite-server.js",
+        "start": "supervisor ./bin/backsite-server.js --non-interactive",
+        "restart": "supervisor -rs"
     },
     "dependencies": {
         "agenda": "^2.0.2",
