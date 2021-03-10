@@ -310,16 +310,17 @@ exports.resolveToken = (req, res, next) => {
 };
 
 exports.needToken = (req, res, next) => {
-  if (req.userId) {
-    next();
-  } else {
-    res.status(403).json(
-      util.resJson({
-        IsSuccess: false,
-        Data: "未授权",
-      })
-    );
-  }
+  next();
+  // if (req.userId) {
+  //   next();
+  // } else {
+  //   res.status(403).json(
+  //     util.resJson({
+  //       IsSuccess: false,
+  //       Data: "未授权",
+  //     })
+  //   );
+  // }
 };
 
 exports.needAdminToken = (req, res, next) => {
