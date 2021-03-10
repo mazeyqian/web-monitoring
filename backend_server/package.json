@@ -5,6 +5,7 @@
     "scripts": {
         "start": "pm2 start bin/init.js --name web-monitoring/backend_server",
         "stop": "pm2 stop bin/init.js --name web-monitoring/backend_server",
+        "restart": "npm run start && npm run stop",
         "dev": "pm2-dev start bin/init.js",
         "build": "docker build -t web-monitoring/backend_server:v1 . -f ./Dockerfile"
     },
