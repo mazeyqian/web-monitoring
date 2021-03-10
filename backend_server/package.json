@@ -3,10 +3,10 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "supervisor ./bin/www",
-        "dev": "supervisor ./bin/backsite-server.js",
-        "start-prod": "supervisor ./bin/backsite-server.js --non-interactive",
-        "restart": "supervisor -rs"
+        "start": "pm2 start bin/init.js",
+        "stop": "pm2 stop bin/init.js",
+        "dev": "pm2-dev start bin/init.js",
+        "build": "docker build -t web-monitoring/backend_server:v1 . -f ./Dockerfile"
     },
     "dependencies": {
         "agenda": "^2.0.2",
@@ -22,5 +22,8 @@
         "morgan": "~1.9.0",
         "nodemailer": "^6.3.0",
         "supervisor": "^0.12.0"
+    },
+    "devDependencies": {
+        "pm2": "^4.5.5"
     }
 }
