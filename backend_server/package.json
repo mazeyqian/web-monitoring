@@ -3,8 +3,8 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
-        "start": "pm2 start bin/init.js",
-        "stop": "pm2 stop bin/init.js",
+        "start": "pm2 start bin/init.js --name web-monitoring/backend_server",
+        "stop": "pm2 stop bin/init.js --name web-monitoring/backend_server",
         "dev": "pm2-dev start bin/init.js",
         "build": "docker build -t web-monitoring/backend_server:v1 . -f ./Dockerfile"
     },
