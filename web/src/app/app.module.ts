@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 import { PublicModule } from './public/public.module';
 declare var window:any
 const routes: Routes = [
-  { path: '', pathMatch:'full',redirectTo:'home' },
+  { path: '', pathMatch:'full',redirectTo:'dashboard' },
   // { path: 'home', loadChildren:'app/homepage/homepage.module#HomepageModule' },
   { path: 'home', redirectTo:'dashboard' },
   { path: 'dashboard', loadChildren:'app/dashboard/dashboard.module#DashboardModule' },
