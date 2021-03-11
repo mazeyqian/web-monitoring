@@ -7,6 +7,7 @@ git push;
 
 # 更新版本
 npm run build;
+cp ./public/report.js ./dist;
 git add .;
 git commit -m 'chore: 更新版本';
 git push;
