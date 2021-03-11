@@ -3,7 +3,6 @@
 rm -rf ./dist;
 git add .;
 git commit -m 'chore: 清空缓存';
-git push;
 
 # 更新版本
 npm run build;
