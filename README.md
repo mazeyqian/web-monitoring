@@ -51,7 +51,7 @@
 ### API请求
 
 默认情况下，使用XMLHTTP拦截用户请求，在请求成功/失败后，统计时间，上报请求。
-用户可使用**__ml.api(api,success, time, code, msg)**手动上报。
+用户可使用**feperf.api(api,success, time, code, msg)**手动上报。
 ```javascript
  api:请求接口
  success:上传是否成功(true/false )
@@ -63,12 +63,12 @@
 
 默认情况下，使用window.onError去监听用户错误脚本，自动上报。
 用户使用的有些前端框架会捕获js错误，错误信息不会抛至window.onError,这种情况需用户手动调用。
-例如在Angular2+，在你的框架全局捕获错误的地方调用**__ml.error(errorObj)**
+例如在Angular2+，在你的框架全局捕获错误的地方调用**feperf.error(errorObj)**
 ```javascript
   export class MyErrorHandler implements ErrorHandler {
       handleError(error) {
         console.error(error);
-        window.__ml && window.__ml.error && window.__ml.error(error.stack ||     error);
+        window.feperf && window.feperf.error && window.feperf.error(error.stack ||     error);
       }
     }
     @NgModule({
@@ -84,7 +84,7 @@
 import Vue from 'vue'
 const errorHandler = (error, vm)=>{
  console.error(error);
- window.__ml && window.__ml.error && window.__ml.error(error);
+ window.feperf && window.feperf.error && window.feperf.error(error);
 }
 Vue.config.errorHandler = errorHandler;
 Vue.prototype.$throw = (error)=> errorHandler(error,this);

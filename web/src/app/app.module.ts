@@ -24,7 +24,7 @@ const routes: Routes = [
 export class MyErrorHandler implements ErrorHandler {
   handleError(error) {
     console.error(error);
-    window.__ml && window.__ml.error && window.__ml.error(error.stack || error);
+    window.feperf && window.feperf.error && window.feperf.error(error.stack || error);
   }
 }
 @NgModule({

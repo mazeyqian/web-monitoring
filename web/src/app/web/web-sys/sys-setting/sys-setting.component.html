@@ -9,12 +9,12 @@
   <div class="setting-gutter">
     手动上报API数据:
     <label nz-checkbox (ngModelChange)="settingChange1($event)" [ngModel]="currentSite.disableHook">勾选此项后，需手动调用
-      __ml.api() 方法上报API成功率。</label>
+      feperf.api() 方法上报API成功率。</label>
   </div>
   <div class="setting-gutter">
     手动上传JS错误:
     <label nz-checkbox (ngModelChange)="settingChange2($event)"
-      [ngModel]="currentSite.disableJS">需手动上传JS错误，调用__ml.error()方法上报。</label>
+      [ngModel]="currentSite.disableJS">需手动上传JS错误，调用feperf.error()方法上报。</label>
   </div>
   <div class="setting-gutter">
     上报资源加载情况:
@@ -77,7 +77,7 @@
   </div>
   <nz-divider></nz-divider>
   <h3>示例展示</h3>
-  <p>1.在Angular2+中使用__ml.error(),在你应用的根模块中加载下面代码：</p>
+  <p>1.在Angular2+中使用feperf.error(),在你应用的根模块中加载下面代码：</p>
   <div class="setting-code">
     <pre>
       <code>
@@ -86,7 +86,7 @@
     </pre>
   </div>
   <br>
-  <p>2.手动上报API成功率__ml.api(api,success, time, code, msg)：</p>
+  <p>2.手动上报API成功率feperf.api(api,success, time, code, msg)：</p>
   <div class="setting-code">
     <pre>
         api:请求接口
