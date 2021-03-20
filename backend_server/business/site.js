@@ -76,6 +76,34 @@ exports.create = function (req, res, next) {
   });
 };
 
+// 删除站点
+exports.removeSite = function (req, res, next) {
+  let id = new Mongoose.Types.ObjectId(req.body.id);
+  SiteModel.remove(
+    {
+      id: id,
+    },
+    function (err, r) {
+      console.log('removeSite', err, r)
+      if (!err) {
+        res.json(
+          util.resJson({
+            IsSuccess: true,
+            Data: null,
+          })
+        );
+      } else {
+        res.json(
+          util.resJson({
+            IsSuccess: false,
+            Data: null,
+          })
+        );
+      }
+    }
+  )
+}
+
 exports.update = function (req, res, next) {
   let id = new Mongoose.Types.ObjectId(req.body.id);
   SiteModel.findOneAndUpdate(

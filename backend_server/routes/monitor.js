@@ -12,6 +12,7 @@ var resourceInfo = require('../business/resourceInfo');
 router.post('/SiteList', site.list);
 router.get('/SiteList', site.list);
 router.post('/RegisterSite',util.needToken, site.create);
+router.post('/RemoveSite',util.needToken, site.removeSite);
 
 //应用设置
 router.post('/SiteSet', site.update);
